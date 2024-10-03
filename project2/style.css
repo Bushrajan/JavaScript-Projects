@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: open sans;
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue !important;
+}
+
+
+.card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: 0.3s;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 600px !important;
+    height: 400px !important;
+}
+
+img {
+    border-radius: 5px !important;
+    max-width: 600px !important;
+    height: 300px !important;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: .4s;
+    transform: translateY(-15px);
+}
+
+
+h1:hover{
+    color: rgb(104, 195, 247) !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    border-radius: 15px !important;
+}
+
+
+.first {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.492),rgba(0, 0, 0, 0)) ,url('https://images.theconversation.com/files/442675/original/file-20220126-17-1i0g402.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=1356&h=668&fit=crop') !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    animation: Chenge 3s infinite !important;
+    scroll-behavior: smooth !important;
+    color: white;
+    padding-bottom: 30px !important;
+}
+
+
+@media (max-width:1026px) {
+    .card {
+    max-width: 580px !important;
+    height: 580px !important;
+}
+img {
+    max-width: 580px !important;
+    height: 580px !important;
+}
+}
+
+@media (max-width:576px) {
+    .card {
+    max-width: 550px !important;
+}
+img {
+    max-width: 550px !important;
+}
+}
+
+@media (max-width:426px) {
+    .card {
+    max-width: 400px !important;
+}
+img {
+    max-width: 400px !important;
+}
+}
+
+@media (max-width:376px) {
+    .card {
+    max-width: 340px !important;
+}
+img {
+    max-width: 340px !important;
+}
+}
+
+@media (max-width:321px) {
+    .card {
+    max-width: 310px !important;
+}
+img {
+    max-width: 310px !important;
+}
+}
+
+@media (max-width:300px) {
+    .card {
+    width: 260px !important;
+}
+img {
+    width: 260px !important;
+}
+}
+
