@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAMEZONE</title>
+    <link rel="shortcut icon" href="./asset/logo.png" />
+
+    <!-- Bootstrap cdn link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+
+    <!-- lordicons link -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+    <!-- font awosem link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- animation link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- slider link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
+    <!-- custom css link -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Spicy Rice", serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.491), rgba(0, 0, 0, 0.382)), url(./asset/background.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+
+<body class="flex items-center justify-center h-screen bg-gray-500">
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary "
+        style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
+        <div class="container-fluid">
+            <img src="./asset/logo.png" alt="img" width="70" />
+            <a class="navbar-brand" href="#">Game-Zone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item me-5">
+                        <a class="nav-link active" aria-current="page" href="./toss.html">Toss Game</a>
+                    </li>
+
+                    <li class="nav-item me-5">
+                        <a class="nav-link active" href="./guess.html">Guess Game</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-center text-white">
+        <br>
+        <h1 class="text-4xl font-bold mt-5 mb-8">Two Player Coin Toss Game</h1>
+        <div class="">
+            <label class="block text-xl">Player 1: Choose Heads or Tails</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="player1" class="bg-gray-700 text-dark py-2 px-4 rounded mb-4">
+                <option value="Heads">Heads</option>
+                <option value="Tails">Tails</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xl">Player 2: Choose Heads or Tails</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <select id="player2" class="bg-gray-700 text-dark py-2 px-4 rounded mb-4">
+                <option value="Heads">Heads</option>
+                <option value="Tails">Tails</option>
+            </select>
+        </div>
+        <br>
+
+        <img id="startButton" class="text-dark  px-4 rounded " width="150" src="./asset/coin.png" alt="img"> Click
+        Me to Start
+        <div class="mt-2">
+            <p id="result" style="font-size: 30px;">
+                <!-- <br><br>
+                <img id="result" class="text-dark py-2 px-4 rounded" src="./asset/youwin.png" alt="img"> -->
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function () {
+            const player1Choice = document.getElementById('player1').value;
+            const player2Choice = document.getElementById('player2').value;
+
+            if (player1Choice === player2Choice) {
+                alert("Both players cannot choose the same option!");
+                return;
+            }
+
+            const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
+            const winner = (result === player1Choice) ? 'Player 1' : 'Player 2';
+
+            document.getElementById('result').textContent = `Result: ${result} - ${winner} Wins!`;
+        });
+    </script>
+</body>
+
+</html>
